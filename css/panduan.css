@@ -94,12 +94,13 @@ ul { list-style: none; }
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.4rem);
   line-height: 1.15;
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
 }
 .hero p {
   margin-top: 10px;
   font-size: 1.15rem;
+  font-weight: 500;
   color: #fff;
 }
 
@@ -208,6 +209,7 @@ input:focus-visible,
 .keterangan {
   text-align: center;
   font-size: 1.15rem;
+  font-weight: 500;
   color: var(--teks-redup);
 }
 
