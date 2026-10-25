@@ -1,0 +1,284 @@
+/* ===== Variabel warna ===== */
+:root {
+  --bg: #0f1f17;
+  --card: #15281d;
+  --garis: #1f3a2a;
+  --hijau: #5fd08a;
+  --hijau-tua: #3cb371;
+  --kuning: #f5c518;
+  --teks: #eaf5ee;
+  --teks-redup: #b9cfc0;
+}
+
+/* ===== Reset dasar ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* Pembungkus isi agar rapi di tengah */
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Header & navigasi (Flexbox) ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 2px solid var(--kuning);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--hijau);
+}
+.badge-sdg {
+  background: var(--hijau);
+  color: var(--bg);
+  font-size: .8rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.nav-list a {
+  display: block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.nav-list a:hover { background: var(--garis); }
+.nav-list a.active { background: var(--hijau); color: var(--bg); }
+
+/* ===== Hero ===== */
+.hero {
+  background: var(--hijau);
+  color: var(--bg);
+  padding: 40px 0 56px;
+}
+.tag {
+  display: inline-block;
+  background: var(--kuning);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: .9rem;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #fff;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+/* ===== Grid 2 kolom untuk kartu (CSS Grid) ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding-top: 40px;
+  padding-bottom: 64px;
+  max-width: 1000px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--garis);
+  border-radius: 24px;
+  padding: 26px;
+  min-width: 0; /* supaya tabel tidak melebarkan kartu */
+}
+.card h2 {
+  color: var(--hijau);
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+}
+
+/* ===== Form BMI ===== */
+label {
+  display: block;
+  font-weight: 600;
+  margin: 12px 0 8px;
+}
+input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--garis);
+  background: var(--bg);
+  color: var(--teks);
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+input::placeholder { color: #6f8678; }
+input:focus-visible,
+.btn:focus-visible,
+.nav-list a:focus-visible {
+  outline: 3px solid var(--kuning);
+  outline-offset: 2px;
+}
+
+.btn {
+  margin-top: 22px;
+  padding: 12px 30px;
+  border: none;
+  border-bottom: 4px solid var(--kuning);
+  border-radius: 999px;
+  background: var(--hijau);
+  color: var(--bg);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.btn:hover { background: var(--hijau-tua); }
+
+.hasil {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--kuning);
+}
+
+/* Catatan sumber di tiap kartu */
+.sumber {
+  margin-top: 18px;
+  padding-left: 12px;
+  border-left: 4px solid var(--kuning);
+  font-size: .9rem;
+  color: var(--teks-redup);
+}
+
+/* ===== Isi Piringku ===== */
+.piring {
+  width: 214px;
+  height: 214px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 6px solid var(--kuning);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.piring span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  font-weight: 700;
+  color: #1b2a20;
+}
+.buah  { background: #e6a23c; }
+.sayur { background: #3cb371; }
+.pokok { background: #f5c82e; }
+.lauk  { background: #8fd47e; }
+
+.keterangan {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--teks-redup);
+}
+
+/* ===== Kartu bawah ===== */
+.ikon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 136px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: #13281d;
+  font-size: 3.6rem;
+}
+.ikon-kuning { background: #3a3315; }
+
+.centang li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+.centang li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--hijau);
+  font-weight: 700;
+}
+
+/* ===== Tabel (scroll di dalam wrapper, bukan di body) ===== */
+.tabel-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 460px;
+}
+th {
+  background: var(--hijau);
+  color: #fff;
+  text-align: left;
+  padding: 14px 12px;
+}
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--garis);
+  background: #12261b;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--hijau);
+  color: #fff;
+  text-align: center;
+  padding: 36px 16px;
+}
+.site-footer strong { color: var(--kuning); }
+
+/* ===== Media queries (responsif) ===== */
+
+/* Tablet (<= 900px): kartu jadi 1 kolom */
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Smartphone (<= 600px): navigasi & ukuran font dikecilkan */
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .header-inner { justify-content: center; }
+  .nav-list { justify-content: center; }
+  .nav-list a { padding: 6px 12px; font-size: .9rem; }
+  .card { padding: 20px; }
+  .card h2 { font-size: 1.4rem; }
+}
